@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+  }
+
+  /* Logo + Navigation */
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-decoration: none;
+  }
+
+  nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  nav a:hover {
+    color: #2980b9;
+  }
+
+  img{
+    height: 70px ; 
+  }
+
+  .ok img,
+.ok .logo {
+    display: inline-block;
+    vertical-align: middle; /* Aligns the image and text vertically in the middle */
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Full viewport height */
+  }
+  
+  .left,.right{
+    flex: 1; /* Make both boxes take equal width */
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .left{
+    background-image: url("contractimg.jpg");
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Make the image cover the entire background */
+    background-position: center; /* Center the image */
+  }
+  .right{
+    background-image: url("contractimg.jpg");
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Make the image cover the entire background */
+    background-position: center; /* Center the image */
+  }
+  /* Add hover effect */
+ .left:hover {
+    transform: scale(1.02);
+    z-index: 99;  /* Make the left box bigger on hover */
+  }
+  
+  .right:hover {
+    transform: scale(1.02);  /* Make the right box bigger on hover */
+    z-index: 99;
+  }
+  
+
+  
+  
+
+  .left-box,.right-box {
+    height: 100px;
+    width: 40%;
+    background-color: #d35400;
+    border-radius: 15px;
+  }
+
+  .vertical-line {
+    width: 2px; /* Vertical line width */
+    background-color: #ccc; /* Line color */
+    height: 100%; /* Adjust height as needed */
+  }
+  
+
+  .cta-button {
+    background-color: #e67e22;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .cta-button:hover {
+    background-color: #d35400;
+  }
+  /* Features Section */
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f7f7f7;
+  }
+
+  .features h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+
+  .feature-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .feature {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .feature:hover{
+   transform: scale(1.1);  /* Scale the box to 110% of its original size on hover */
+   z-index: 5;
+  }
+
+  .feature img {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .feature p {
+    color: #7f8c8d;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .testimonial {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease ; 
+  }
+
+  .testimonial:hover{
+    transform: scale(1.1);  /* Scale the box to 110% of its original size on hover */
+   }
+
+  .testimonial img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial p {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-style: italic;
+  }
+
+  .testimonial .author {
+    font-weight: bold;
+    color: #7f8c8d;
+  }
+
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+
+  footer a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: #ecf0f1;
+  }
+
+  .feature>img {
+    height: 60px ;
+    width: 60px;
+  }

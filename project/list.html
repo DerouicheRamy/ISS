@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Listings - RoommateFinder</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+          background-color: #fff;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+          height: 80px;
+        }
+      
+        /* Logo + Navigation */
+        .logo {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: #2c3e50;
+          text-decoration: none;
+        }
+      
+        nav a {
+          margin-left: 1rem;
+          text-decoration: none;
+          color: #2c3e50;
+          font-weight: 500;
+          transition: color 0.2s;
+        }
+      
+        nav a:hover {
+          color: #2980b9;
+        }
+      
+        img{
+          height: 70px ; 
+        }
+      
+        .ok img,
+      .ok .logo {
+          display: inline-block;
+          vertical-align: middle; 
+      }
+      .main-container {
+        display: flex;
+        gap: 4rem;
+        width: 90%;
+        max-width: 1200px;
+        margin: 1rem auto;
+      }
+      
+      /* Sidebar */
+      .sidebar {
+        width: 600px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content:center;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+      }
+      
+      .sidebar h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .sidebar label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: #2c3e50;
+      }
+      
+      .sidebar input {
+        margin-right: 0.5rem;
+      }
+      
+      .sidebar button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background: #e67e22;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+    
+      
+    .filters { background: #fff; padding: 1rem; border-radius: 8px; margin: 1rem auto; width: 90%; max-width: 1000px; display: flex; gap: 1rem;justify-content: center;}
+    .filters input, .filters select { padding: 0.5rem; border: 1px solid #bdc3c7; border-radius: 4px; }
+    .filters button { padding: 0.6rem 1rem; background: #e67e22; color: #fff; border: none; border-radius: 4px; cursor: pointer;}
+    .listings { width: 90%; max-width: 1000px; margin: 1rem auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+    .listing-card { background: #fff; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .listing-card:hover{transform: scale(1.1);}
+    .listing-card img { width: 100%; border-radius: 4px; margin-bottom: 0.5rem; }
+    .listing-card button{padding: 0rem 1rem;margin-top:0.5rem;background: #e67e22; color: #fff; border: none; border-radius: 2px; cursor: pointer;height: 20px;}
+    .verified { color: #27ae60; font-weight: bold; }
+    .rating { color: #f1c40f; margin-left: 0.5rem; }
+    footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 1rem; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+    <body>
+        <header>
+          <div class="ok">
+            <img src="logo.png" alt="test">
+            <a href="home.html" class="logo">Roommatch</a>
+          </div>
+          <nav>
+            <a href="#">Find Roommates</a>
+            <a href="list.html">List Property</a>
+            <a href="Aboutus.html">About Us</a>
+            <a href="login.html">Login</a>
+          </nav>
+        </header>
+      
+        <div class="main-container">
+          <!-- Left Sidebar -->
+          <div class="sidebar">
+            <h3>More Filters</h3>
+            <label>
+              <input type="checkbox" />
+              Pet Friendly
+            </label>
+            <label>
+              <input type="checkbox" />
+              Elevator
+            </label>
+            <label>
+              <input type="checkbox" />
+              Swimming Pool
+            </label>
+            <label>
+              <input type="checkbox" />
+              Gym Access
+            </label>
+            <button>Apply Filters</button>
+          </div>
+      
+          <!-- Main Content -->
+          <div class="content">
+            <!-- Search Filters -->
+            <div class="filters">
+              <input type="text" placeholder="Location" />
+              <input type="number" placeholder="Budget (max)" />
+              <select>
+                <option>Amenities</option>
+                <option>Parking</option>
+                <option>Furnished</option>
+                <option>Laundry</option>
+              </select>
+              <select>
+                <option>S+0</option>
+                <option>S+1</option>
+                <option>S+2</option>
+                <option>S+3</option>
+              </select>
+              <button>Search</button>
+            </div>
+      
+            <!-- Property Listings -->
+            <div class="listings">
+              <div class="listing-card">
+                <img src="" alt="Property">
+                <h3>Spacious Apartment</h3>
+                <p>$800/month | Downtown</p>
+                <p><span class="verified">Verified</span> | Landlord Rating: <span class="rating">★★★★☆</span></p>
+                <button>View Details</button>
+              </div>
+              <div class="listing-card">
+                <img src="" alt="Property">
+                <h3>Shared Condo</h3>
+                <p>$500/month | Near Campus</p>
+                <p><span class="verified">Verified</span> | Landlord Rating: <span class="rating">★★★☆☆</span></p>
+                <button>View Details</button>
+              </div>
+              <div class="listing-card">
+                <img src="" alt="Property">
+                <h3>Modern Studio</h3>
+                <p>$700/month | City Center</p>
+                <p><span class="verified">Verified</span> | Landlord Rating: <span class="rating">★★★★★</span></p>
+                <button>View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <footer>
+          <p>&copy; 2025 RoommateFinder. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        </footer>
+      </body>
+      
+  
+</body>
+</html>

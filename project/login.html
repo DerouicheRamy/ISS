@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up / Login - RoommateFinder</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #fff;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        height: 80px;
+      }
+    
+      /* Logo + Navigation */
+      .logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #2c3e50;
+        text-decoration: none;
+      }
+    
+      nav a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: #2c3e50;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+    
+      nav a:hover {
+        color: #2980b9;
+      }
+    
+      img{
+        height: 70px ; 
+      }
+    
+      .ok img,
+    .ok .logo {
+        display: inline-block;
+        vertical-align: middle; 
+    }
+    
+    /* Main Container */
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    /* Tabs (Sign Up / Login) */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .tab {
+      padding: 0.8rem 1.5rem;
+      margin: 0 1rem;
+      cursor: pointer;
+      background-color: #ecf0f1;
+      border: none;
+      border-radius: 4px;
+      color: #2c3e50;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .tab.active {
+      background-color: #e67e22;
+      color: #fff;
+    }
+
+    /* Form Sections */
+    .form-section {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      display: none; 
+    }
+    .form-section.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #bdc3c7;
+      border-radius: 4px;
+    }
+    .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .btn {
+      position: relative;
+      left: 120px;
+      padding: 0.8rem 1.5rem;
+      background-color: #e67e22;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #d35400;
+    }
+    .social-signin {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .social-btn {
+      background: #ecf0f1;
+      color: #2c3e50;
+      border: none;
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      margin: 0.3rem 0;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .social-btn:hover {
+      background: #bdc3c7;
+    }
+    .forgot-password,
+    .switch-panel {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .forgot-password a,
+    .switch-panel a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .forgot-password a:hover,
+    .switch-panel a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #bdc3c7;
+      text-align: center;
+      padding: 1rem;
+    }
+    footer a {
+      color: #bdc3c7;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="ok">
+        <img src="logo.png" alt="test">
+        <a href="home.html" class="logo">Roommatch</a>
+    </div>
+    <nav>
+      <a href="#">Find Roommatess</a>
+      <a href="list.html">List Property</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Welcome! Sign Up or Login</h2>
+    
+    <!-- Tabs for switching between Sign Up and Login -->
+    <div class="tabs">
+      <button class="tab active" id="signUpTab">Sign Up</button>
+      <button class="tab" id="loginTab">Login</button>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form-section active" id="signUpSection">
+      <div class="form-group">
+        <label for="signupName">Full Name</label>
+        <input type="text" id="signupName" placeholder="name" />
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" placeholder="name@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="signupPhone">Phone (optional)</label>
+        <input type="tel" id="signupPhone" placeholder="+216 55-123-456" />
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="••••••••" />
+      </div>
+      <div class="form-group">
+        <label for="signupConfirm">Confirm Password</label>
+        <input type="password" id="signupConfirm" placeholder="••••••••" />
+      </div>
+      <div class="form-group">
+        <label>Sex</label>
+        <div class="radio-group">
+          <label><input type="radio" name="userType" value="student" checked /> Male</label>
+          <label><input type="radio" name="userType" value="landlord" /> Female</label>
+        </div>
+      </div>
+      <div class="container">
+        <h2>Personal Details</h2>
+        <div class="personal-details">
+            <div class="form-group">
+              <label>Do you smoke?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="smoke" value="yes" /> Yes</label>
+                <label><input type="radio" name="smoke" value="no" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you own a pet?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="pet" value="yes" /> Yes</label>
+                <label><input type="radio" name="pet" value="no" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Are you a student?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="student" value="yes" /> Yes</label>
+                <label><input type="radio" name="student" value="no" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you consider yourself clean and tidy?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="remote" value="yes" /> Yes</label>
+                <label><input type="radio" name="remote" value="no" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you prefer a quiet environment?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="quiet" value="yes" /> Yes</label>
+                <label><input type="radio" name="quiet" value="no" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you often invite friends?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="share" value="yes" /> Yes</label>
+                <label><input type="radio" name="share" value="no" /> No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <button class="btn">Sign Up</button>
+
+      <!-- Social Media Sign-In -->
+      <div class="social-signin">
+        <p>Or sign up with:</p>
+        <button class="social-btn">Continue with Google</button>
+        <button class="social-btn">Continue with Facebook</button>
+      </div>
+      <div class="switch-panel">
+        <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-section" id="loginSection">
+      <div class="form-group">
+        <label for="loginEmail">Email or Username</label>
+        <input type="text" id="loginEmail" placeholder="name@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" />
+      </div>
+      <button class="btn">Login</button>
+
+      <!-- Social Media Sign-In -->
+      <div class="social-signin">
+        <p>Or login with:</p>
+        <button class="social-btn">Continue with Google</button>
+        <button class="social-btn">Continue with Facebook</button>
+      </div>
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="switch-panel">
+        <p>Don’t have an account? <a href="#" id="switchToSignUp">Sign Up here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <a href="home.html">Home</a>    |
+      <a href="Aboutus.html">About Us</a>
+    </p>
+    <p>&copy; 2025 RoommateFinder. All rights reserved.</p>
+  </footer>
+
+  <script>
+    //switch between Sign Up and Login forms
+    const signUpTab = document.getElementById('signUpTab');
+    const loginTab = document.getElementById('loginTab');
+    const signUpSection = document.getElementById('signUpSection');
+    const loginSection = document.getElementById('loginSection');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const switchToSignUp = document.getElementById('switchToSignUp');
+
+    function showSignUp() {
+      signUpTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signUpSection.classList.add('active');
+      loginSection.classList.remove('active');
+    }
+
+    function showLogin() {
+      loginTab.classList.add('active');
+      signUpTab.classList.remove('active');
+      loginSection.classList.add('active');
+      signUpSection.classList.remove('active');
+    }
+
+    signUpTab.addEventListener('click', showSignUp);
+    loginTab.addEventListener('click', showLogin);
+    if (switchToLogin) switchToLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLogin();
+    });
+    if (switchToSignUp) switchToSignUp.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSignUp();
+    });
+  </script>
+</body>
+</html>
