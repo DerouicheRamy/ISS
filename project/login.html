@@ -195,6 +195,13 @@
     footer a:hover {
       color: #ecf0f1;
     }
+    
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+    
   </style>
 </head>
 <body>
@@ -382,6 +389,113 @@
       e.preventDefault();
       showSignUp();
     });
+    document.addEventListener("DOMContentLoaded", function () {
+      const signUpForm = document.getElementById("signUpSection");
+      const loginForm = document.getElementById("loginSection");
+  
+      function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+      }
+  
+      function showError(input, message) {
+          removeError(input); 
+          const errorMsg = document.createElement("p");
+          errorMsg.classList.add("error-message");
+          errorMsg.textContent = message;
+          input.style.border = "1px solid red" ; 
+          input.parentNode.appendChild(errorMsg);
+      }
+  
+      function removeError(input) {
+          const existingError = input.parentNode.querySelector(".error-message");
+          if (existingError) {
+              existingError.remove();
+          }
+      }
+  
+      // Sign Up Form Validation
+      signUpForm.querySelector(".btn").addEventListener("click", function (e) {
+          e.preventDefault();
+          
+          const name = document.getElementById("signupName");
+          const email = document.getElementById("signupEmail");
+          const phone = document.getElementById("signupPhone");
+          const password = document.getElementById("signupPassword");
+          const confirmPassword = document.getElementById("signupConfirm");
+  
+          let isValid = true;
+  
+          if (name.value.trim() === "") {
+              showError(name, "Full Name is required.");
+              isValid = false;
+          } else {
+              removeError(name);
+          }
+  
+          if (email.value.trim() === "" || !validateEmail(email.value)) {
+              showError(email, "Enter a valid email address.");
+              isValid = false;
+          } else {
+              removeError(email);
+          }
+
+          if (phone.value.trim() === "" || phone.value.trim().length!=8 ) {
+            showError(phone, "Enter a valid phone number.");
+            isValid = false;
+        } else {
+            removeError(name);
+        }
+  
+          if (password.value.length < 6) {
+              showError(password, "Password must be at least 6 characters long.");
+              isValid = false;
+          } else {
+              removeError(password);
+          }
+  
+          if (password.value !== confirmPassword.value) {
+              showError(confirmPassword, "Passwords do not match.");
+              isValid = false;
+          } else {
+              removeError(confirmPassword);
+          }
+  
+          if (isValid) {
+              window.location.href = "home.html";
+          }
+      });
+  
+      // Login Form Validation
+      loginForm.querySelector(".btn").addEventListener("click", function (e) {
+          e.preventDefault();
+  
+          const email = document.getElementById("loginEmail");
+          const password = document.getElementById("loginPassword");
+  
+          let isValid = true;
+  
+          if (email.value.trim() === "" || !validateEmail(email.value)) {
+              showError(email, "Email or Username is required.");
+              isValid = false;
+          } else {
+              removeError(email);
+          }
+  
+          if (password.value.trim() === "") {
+              showError(password, "Password is required.");
+              isValid = false;
+          } else {
+              removeError(password);
+          }
+  
+          if (isValid) {
+              window.location.href = "home.html";
+          }
+      });
+  });
+  
+
   </script>
 </body>
 </html>
