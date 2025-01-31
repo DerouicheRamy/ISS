@@ -25,7 +25,7 @@
             <div class="left-box">
                 <h2>Looking for a Room?</h2>
                 <p>Find verified listings with ease.</p>
-                <button class="cta-button">Find a Room</button>
+                <button class="cta-button" onclick="window.location.href='list.html';">Find a Room</button>
               </div>
         </div>
         <div class="vertical-line"></div>
@@ -103,7 +103,7 @@
   const right = document.querySelector('.right');
   
   left.addEventListener('mouseenter', () => {
-    right.style.filter = 'grayscale(100%)';
+    right.style.filter = 'blur(8px)';
   });
   
   left.addEventListener('mouseleave', () => {
@@ -111,7 +111,7 @@
   });
 
   right.addEventListener('mouseenter', () => {
-    left.style.filter = 'grayscale(100%)';
+    left.style.filter = 'blur(8px)';
   });
   
   right.addEventListener('mouseleave', () => {
