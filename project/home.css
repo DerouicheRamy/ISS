@@ -1,122 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roommatch</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
-    <header>
-        <div class="ok">
-            <img src="logo.png" alt="test">
-            <a href="#" class="logo">Roommatch</a>
-        </div>
-        <nav>
-          <a href="#">Find Roommatess</a>
-          <a href="list.html">List Property</a>
-          <a href="Aboutus.html">About Us</a>
-          <a href="login.html">Login</a>
-        </nav>
-      </header>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
 
-      <section class="hero">
-        <div class="left">
-            <div class="left-box">
-                <h2>Looking for a Room?</h2>
-                <p>Find verified listings with ease.</p>
-                <button class="cta-button" onclick="window.location.href='list.html';">Find a Room</button>
-              </div>
-        </div>
-        <div class="vertical-line"></div>
-        <div class="right">
-            <div class="right-box">
-                <h2>owning a Room ? </h2>
-                <p>add your room.</p>
-                <button class="cta-button">Add Room</button>
-              </div>
-        </div>
-      </section>
-      <!-- Features Section -->
-  <section class="features">
-    <h2>Why Choose Us?</h2>
-    <div class="feature-boxes">
-      <div class="feature">
-        <img src="payment-protection.png" alt="Feature Icon" />
-        <h3>Secure Payments</h3>
-        <p>Pay with confidence through our reliable platform.</p>
-      </div>
-      <div class="feature">
-        <img src="check.png" alt="Feature Icon" />
-        <h3>Verified Listings</h3>
-        <p>We ensure the authenticity of every listing.</p>
-      </div>
-      <div class="feature">
-        <img src="link.png" alt="Feature Icon" />
-        <h3>Compatibility Matching</h3>
-        <p>Find roommates who share similar lifestyles.</p>
-      </div>
-      <div class="feature">
-        <img src="customer-support.png" alt="Feature Icon" />
-        <h3>Community Support</h3>
-        <p>We’re here to help every step of the way.</p>
-      </div>
-    </div>
-  </section>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    z-index: 999;
+    position: relative;
+  }
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <div class="testimonial-items">
-      <div class="testimonial">
-        <img src="https://via.placeholder.com/60" alt="Student A" />
-        <p>“I found the perfect roommate in less than a week!”</p>
-        <span class="author">- Student A</span>
-      </div>
-      <div class="testimonial">
-        <img src="https://via.placeholder.com/60" alt="Student B" />
-        <p>“The process felt secure and hassle-free!”</p>
-        <span class="author">- Student B</span>
-      </div>
-      <div class="testimonial">
-        <img src="https://via.placeholder.com/60" alt="Student C" />
-        <p>“Listings are reliable, and I love the matching tools!”</p>
-        <span class="author">- Student C</span>
-      </div>
-    </div>
-  </section>
+  /* Logo + Navigation */
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-decoration: none;
+  }
 
-  <!-- Footer -->
-  <footer>
-    <p>
-      <a href="home.html">Home</a>    |
-      <a href="Aboutus.html">About Us</a>|
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a>
-    </p>
-    <p>&copy; 2025 RoommateFinder. All rights reserved.</p>
-  </footer>
+  nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
 
-</body>
-<script>
-  const left = document.querySelector('.left');
-  const right = document.querySelector('.right');
+  nav a:hover {
+    color: #d35400;
+  }
+
+  img{
+    height: 70px ; 
+  }
+
+  .ok img,
+.ok .logo {
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; 
+    overflow: hidden;
+  }
   
-  left.addEventListener('mouseenter', () => {
-    right.style.filter = 'blur(8px)';
-  });
+  .left,.right{
+    flex: 1; 
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .left{
+    background-image: url("contractimg.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+  }
+  .right{
+    background-image: url("contractimg.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+  }
   
-  left.addEventListener('mouseleave', () => {
-    right.style.filter = 'none';
-  });
+ .left:hover {
+    transform: scale(1.02);
+    z-index: 99;  
+    position: relative;
+  }
+  
+  .right:hover {
+    transform: scale(1.02);
+    z-index: 99;
+    position: relative;
+  }
+  
 
-  right.addEventListener('mouseenter', () => {
-    left.style.filter = 'blur(8px)';
-  });
   
-  right.addEventListener('mouseleave', () => {
-    left.style.filter = 'none';
-  });
   
-</script>
-</html>
+
+  .left-box,.right-box {
+    height: 100px;
+    width: 40%;
+    background-color: #d35400df;
+    border-radius: 15px;
+  }
+
+  .vertical-line {
+    width: 2px; 
+    background-color: #ccc; 
+  }
+  
+
+  .cta-button {
+    background-color: #e67e22;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .cta-button:hover {
+    background-color: #d35400;
+  }
+  /* Features Section */
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #f7f7f7;
+  }
+
+  .features h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+
+  .feature-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .feature {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .feature:hover{
+   transform: scale(1.1);  
+   transform: translate(0px, -15px) ; 
+   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature img {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+
+  .feature p {
+    color: #7f8c8d;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .testimonial {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease ; 
+  }
+
+  .testimonial:hover{
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+   }
+
+  .testimonial img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial p {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-style: italic;
+  }
+
+  .testimonial .author {
+    font-weight: bold;
+    color: #7f8c8d;
+  }
+
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+
+  footer a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: #ecf0f1;
+  }
+
+  .feature>img {
+    height: 60px ;
+    width: 60px;
+  }
