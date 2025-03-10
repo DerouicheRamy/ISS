@@ -1,0 +1,92 @@
+[
+    {
+      "title": "Cozy Apartment in Downtown",
+      "price": 1200,
+      "location": "New York, NY",
+      "rating": 4.5
+    },
+    {
+      "title": "Modern Loft in the City Center",
+      "price": 1500,
+      "location": "San Francisco, CA",
+      "rating": 3
+    },
+    {
+      "title": "Spacious Family Home",
+      "price": 2000,
+      "location": "Austin, TX",
+      "rating": 2
+    },
+    {
+      "title": "Luxury Penthouse with a View",
+      "price": 3000,
+      "location": "Los Angeles, CA",
+      "rating": 4.9
+    },
+    {
+      "title": "Charming Cottage by the Lake",
+      "price": 900,
+      "location": "Seattle, WA",
+      "rating": 4.0
+    },
+    {
+      "title": "Rustic Cabin in the Woods",
+      "price": 800,
+      "location": "Denver, CO",
+      "rating": 3.8
+    },
+    {
+      "title": "Elegant Townhouse in the Suburbs",
+      "price": 1800,
+      "location": "Chicago, IL",
+      "rating": 1
+    },
+    {
+      "title": "Beachfront Villa",
+      "price": 2500,
+      "location": "Miami, FL",
+      "rating": 4.6
+    },
+    {
+      "title": "Urban Studio Apartment",
+      "price": 2000,
+      "location": "Boston, MA",
+      "rating": 5
+    },
+    {
+      "title": "Historic Brownstone",
+      "price": 2200,
+      "location": "Philadelphia, PA",
+      "rating": 4.4
+    },
+    {
+      "title": "Mountain Retreat",
+      "price": 1300,
+      "location": "Salt Lake City, UT",
+      "rating": 4.0
+    },
+    {
+      "title": "Sunny Bungalow",
+      "price": 950,
+      "location": "San Diego, CA",
+      "rating": 4.2
+    },
+    {
+      "title": "Luxury Condo with Pool",
+      "price": 2800,
+      "location": "Las Vegas, NV",
+      "rating": 4.8
+    },
+    {
+      "title": "Quiet Country House",
+      "price": 750,
+      "location": "Nashville, TN",
+      "rating": 3.9
+    },
+    {
+      "title": "Modern Apartment Near Park",
+      "price": 1400,
+      "location": "Portland, OR",
+      "rating": 4.3
+    }
+  ]
