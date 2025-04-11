@@ -14,19 +14,17 @@ const toggle_in = () => {
 </script>
 
 <template>
+  
 <div class="container">
     <h2>Welcome! Sign Up or Login</h2>
-    
-    <!-- Tabs for switching between Sign Up and Login -->
     <div class="tabs">
       <button class="tab" @click="toggle_up" :style="{ backgroundColor: active ? 'lightgray' : '#e67e22' }">Sign Up</button>
       <button class="tab" @click="toggle_in" :style="{ backgroundColor: active ? '#e67e22' : 'lightgray' }">Login</button>
     </div>
-    
 <div v-if="active"><signin/></div>
 <div v-else="active"><signup/></div>
-
 </div>
+
 </template>
 
 <style scoped>
@@ -47,7 +45,6 @@ h2 {
   text-align: center;
 }
 
-    /* Tabs (Sign Up / Login) */
 .tabs {
   display: flex;
   justify-content: center;

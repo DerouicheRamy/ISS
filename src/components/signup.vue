@@ -1,7 +1,6 @@
 <template>
-    <!-- Sign Up Form -->
     <form @submit.prevent="submitForm">
-      <div class="form-section active" id="signUpSection">
+      <div class="form-section" id="signUpSection">
         <div class="form-group">
           <label for="signupName">Full Name</label>
           <input

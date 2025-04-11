@@ -2,9 +2,21 @@
 import housecard  from '../components/housecard.vue';
 import housefilter from '@/components/housefilter.vue';
 import filterpersons from '@/components/filterpersons.vue';
-import houseData from '@/houses.json';
-import { ref,computed } from 'vue';
-const houses = ref(houseData) ; 
+import axios from 'axios';
+import { ref,computed,onMounted } from 'vue';
+
+const houses = ref([]) ;
+
+
+
+onMounted( async () => {
+    try {
+        const response = await axios.get("http://localhost:5000/houses");
+        houses.value =  response.data ; 
+    } catch (error) {
+        console.error("error fetching houses",error) ; 
+    }
+})
 
 
 const appliedFilters = ref(null);
@@ -15,19 +27,17 @@ const handleFilters = (filters) => {
 
 
 const filteredHouses = computed(() => {
-    if (!appliedFilters.value){
-        return houses.value ; 
+    if (!appliedFilters.value) {
+        return houses.value;
     }
-    else if (appliedFilters.value && appliedFilters.value.budget && appliedFilters.value.rating) {
-        return houses.value.filter((house) => house.price < appliedFilters.value.budget && Math.floor(house.rating) === appliedFilters.value.rating) ;  
-    }
-    else if (appliedFilters.value && appliedFilters.value.budget) {
-        return houses.value.filter((house) => house.price < appliedFilters.value.budget) ;  
-    }
-    else if (appliedFilters.value && appliedFilters.value.rating){
-        return houses.value.filter((house) => Math.floor(house.rating) === appliedFilters.value.rating );
-    } 
-    return houses.value ; 
+    return houses.value.filter((house) => {
+        return (
+            (!appliedFilters.value.budget || house.price < appliedFilters.value.budget) &&
+            (!appliedFilters.value.rating || Math.floor(house.rating) === appliedFilters.value.rating) &&
+            (!appliedFilters.value.location || house.location === appliedFilters.value.location) 
+        ); 
+    });
+    
 });
 
 </script>

@@ -1,92 +1,130 @@
-[
+{
+  "houses": [
     {
       "title": "Cozy Apartment in Downtown",
       "price": 1200,
       "location": "New York, NY",
-      "rating": 4.5
+      "rating": 4.5,
+      "id": "99e2"
     },
     {
       "title": "Modern Loft in the City Center",
       "price": 1500,
       "location": "San Francisco, CA",
-      "rating": 3
+      "rating": 3,
+      "id": "363d"
     },
     {
       "title": "Spacious Family Home",
       "price": 2000,
       "location": "Austin, TX",
-      "rating": 2
+      "rating": 2,
+      "id": "9a30"
     },
     {
       "title": "Luxury Penthouse with a View",
       "price": 3000,
       "location": "Los Angeles, CA",
-      "rating": 4.9
+      "rating": 4.9,
+      "id": "fba5"
     },
     {
       "title": "Charming Cottage by the Lake",
       "price": 900,
       "location": "Seattle, WA",
-      "rating": 4.0
+      "rating": 4,
+      "id": "66e0"
     },
     {
       "title": "Rustic Cabin in the Woods",
       "price": 800,
       "location": "Denver, CO",
-      "rating": 3.8
+      "rating": 3.8,
+      "id": "5e52"
     },
     {
       "title": "Elegant Townhouse in the Suburbs",
       "price": 1800,
       "location": "Chicago, IL",
-      "rating": 1
+      "rating": 1,
+      "id": "ed1f"
     },
     {
       "title": "Beachfront Villa",
       "price": 2500,
       "location": "Miami, FL",
-      "rating": 4.6
+      "rating": 4.6,
+      "id": "270f"
     },
     {
       "title": "Urban Studio Apartment",
       "price": 2000,
       "location": "Boston, MA",
-      "rating": 5
+      "rating": 5,
+      "id": "16ff"
     },
     {
       "title": "Historic Brownstone",
       "price": 2200,
       "location": "Philadelphia, PA",
-      "rating": 4.4
+      "rating": 4.4,
+      "id": "f1cc"
     },
     {
       "title": "Mountain Retreat",
       "price": 1300,
       "location": "Salt Lake City, UT",
-      "rating": 4.0
+      "rating": 4,
+      "id": "9ac6"
     },
     {
       "title": "Sunny Bungalow",
       "price": 950,
       "location": "San Diego, CA",
-      "rating": 4.2
+      "rating": 4.2,
+      "id": "f0b8"
     },
     {
       "title": "Luxury Condo with Pool",
       "price": 2800,
       "location": "Las Vegas, NV",
-      "rating": 4.8
+      "rating": 4.8,
+      "id": "d831"
     },
     {
       "title": "Quiet Country House",
       "price": 750,
       "location": "Nashville, TN",
-      "rating": 3.9
+      "rating": 3.9,
+      "id": "a512"
     },
     {
       "title": "Modern Apartment Near Park",
       "price": 1400,
       "location": "Portland, OR",
-      "rating": 4.3
+      "rating": 4.3,
+      "id": "df90"
+    },
+    {
+      "id": "df93",
+      "title": "test",
+      "price": 20,
+      "location": "Portland, TN",
+      "rating": 4
+    },
+    {
+      "id": "cc39",
+      "title": "RE",
+      "location": "Test",
+      "price": 300,
+      "rating": 3
+    },
+    {
+      "id": "9862",
+      "title": "tititititi",
+      "location": "TN",
+      "price": 1300,
+      "rating": 3
     }
   ]
+}

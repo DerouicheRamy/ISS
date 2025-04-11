@@ -20,11 +20,12 @@ const applyFilters = () => {
 };
 
 const resetFilters = () => {
+  filters.value.location = '' ;
+  filters.value.rating = '' ;
+  filters.value.budget = '' ;
   budget.value = '' ; 
-  rating.value = '' ; 
-  filters.value.location = '';
-  filters.value.budget = '';
-  filters.value.rating = '';
+  rating.value = '' ;
+  location.value = ''; 
 };
 
 </script>
