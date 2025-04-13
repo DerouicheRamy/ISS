@@ -1,72 +1,94 @@
 <script setup>
-import { RouterLink , useRoute } from 'vue-router';
-const route = useRoute() ;
+import { RouterLink, useRoute } from 'vue-router';
+const route = useRoute();
 const isActive = (routePath) => {
-  return route.path === routePath ; 
-}
-
+  return route.path === routePath;
+};
 </script>
+
 <template>
-<header>
+  <header class="header-container">
     <div class="left">
-        <img  src="@/assets/images/logo.png" alt="test">
-        <RouterLink   to="/" class="logo">Roommatch</RouterLink>
+      <img src="@/assets/images/logo.png" alt="Logo" />
+      <RouterLink to="/" class="logo">Roommatch</RouterLink>
     </div>
-    <nav id="nav">
-      <RouterLink class="a" v-bind:class="{ activeClass: isActive('/add') }" to="/add">Add Property</RouterLink>
-      <RouterLink class="a" v-bind:class="{ activeClass: isActive('/list') }" to="/list">List Property</RouterLink>
-      <RouterLink class="a" v-bind:class="{ activeClass: isActive('/aboutus') }" to="/aboutus">About Us</RouterLink>
-      <RouterLink class="a" v-bind:class="{ activeClass: isActive('/login') }" to="/login">Login</RouterLink>
-    </nav>
-</header>
+
+    <div class="nav-wrapper">
+      <RouterLink to="/add" :class="['nav-item', { active: isActive('/add') }]">Add Property</RouterLink>
+      <RouterLink to="/list" :class="['nav-item', { active: isActive('/list') }]">List Property</RouterLink>
+      <RouterLink to="/aboutus" :class="['nav-item', { active: isActive('/aboutus') }]">About Us</RouterLink>
+      <RouterLink to="/signup" class="button">Sign Up</RouterLink>
+      <RouterLink to="/login" class="login">Log In</RouterLink>
+    </div>
+  </header>
 </template>
+
 <style scoped>
-header {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  height: 80px;
+  padding: 0 2rem;
   background-color: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  height: 80px;
 }
-    
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left img {
+  height: 60px;
+}
+
 .logo {
   font-weight: bold;
   font-size: 1.5rem;
   color: #2c3e50;
   text-decoration: none;
 }
-    
-.a {
-  margin-left: 1rem;
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
   text-decoration: none;
-  color: #2c3e50;
   font-weight: 500;
-  transition: color 0.2s;
-  padding: 10px 5px;
+  color: #2c3e50;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s;
 }
-    
-.a:hover {
-  border-radius: 15px;
-  color: #fff;
+
+.nav-item:hover {
   background-color: #ff5500;
+  color: white;
 }
 
-img{
-  height: 70px ; 
+.active {
+  background-color: #ff5500;
+  color: white;
 }
 
-.left img,
-.left .logo {
-  display: inline-block;
-  vertical-align: middle; 
+.button {
+  background-color: #424242;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.activeClass {
-  border-radius: 15px;
-  color: #fff;
-  background-color: #ff5500df;
-  opacity: 90%;
+.login {
+  margin-left: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>
